@@ -4,7 +4,7 @@
   
 .app__form{
  padding: 7px;
-padding-left: 15px;
+padding-left: 5px;
 position: fixed;
 bottom: 0;
 z-index: 1;
@@ -13,18 +13,36 @@ width: 95%;
 margin: 20px;
 border-radius: 10px;
 }
+
+.app__emoji{
+    text-align: left;
+    margin: auto;
+    position: fixed;
+    z-index: 2;
+    bottom: 14.2%;
+    margin-left: 4vh;
+}
+
 .app__formControl{
     display: flex !important;
     flex-direction: row !important;
     width: 100%;
 }
 .app__input{
-
     flex: 1;
 }
 .app__iconButton{
     flex: 0;
 }
 .app__messages{
-    height: 10vh;
+    height: 15vh;
+}
+.app__emojiButton{
+    flex: 0;
+    position: absolute;
+}
+
+
+.inVisible{
+    visibility: hidden;
 }

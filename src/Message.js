@@ -4,8 +4,6 @@ import './styles/message.css';
 
 
 const Message = forwardRef(({username, message }, ref) => {
-    console.log(username);
-    console.log(message);
     const isUser = username === message.username;
     return (
         <div ref={ref} className={`message ${isUser && 'message__user'}`}>
