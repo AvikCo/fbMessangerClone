@@ -26,5 +26,5 @@ border-radius: 10px;
     flex: 0;
 }
 .app__messages{
-    margin-bottom:16vh;
+    height: 10vh;
 }

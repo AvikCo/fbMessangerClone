@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useRef} from 'react'
 import { IconButton, FormControl, InputLabel, Input } from '@material-ui/core';
 import './styles/App.css';
 import db from './firebase';
@@ -11,6 +11,7 @@ const App = () =>{
     const [input,setInput] = useState('');
     const [messages, setMessages] = useState([]);
     const [username, setUsername] = useState('');
+    const lastdiv = useRef();
 
     useEffect(() =>{
         db.collection('messages')
@@ -26,7 +27,12 @@ const App = () =>{
     useEffect(() => {
         setUsername(prompt("Pleae enter your name"));
     }, [])
-
+    const scrollToBottom = () => {
+        lastdiv.current?.scrollIntoView({ behavior: "smooth" })
+    }
+useEffect(()=>{
+    scrollToBottom();
+},[messages])
     const sendMessage = (event) => {
         event.preventDefault();
         db.collection('messages').add({
@@ -37,6 +43,7 @@ const App = () =>{
 
         setMessages([...messages, {username:username, message: input}]);
         setInput('');
+        
     }
 
   return (
@@ -51,21 +58,19 @@ const App = () =>{
                 <IconButton className="app__iconButton" type='submit' disabled={!input} variant="contained" color="primary" onClick={sendMessage}>
                     <SendIcon/>
                 </IconButton>
-                
             </FormControl>
-            
         </form>
-        <div className="app__messages">
-        <FlipMove >
+    
+        {/*<FlipMove >*/}
         {
             messages.map(({id, message}) => 
             (   
                 <Message key={id} username={username} message={message}/>
                 ))
         }
-        </FlipMove>
-        </div>
+        <div className="app__messages" ref={lastdiv}></div>
     </div>
+    
   );
 };
 
