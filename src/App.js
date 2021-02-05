@@ -14,7 +14,7 @@ const App = () =>{
 
     useEffect(() =>{
         db.collection('messages')
-        .orderBy('timestamp','desc')
+        .orderBy('timestamp','asc')
         .onSnapshot(snapshot => {
             setMessages(snapshot.docs.map(doc => (
             {id: doc.id, message: doc.data()}
@@ -55,7 +55,8 @@ const App = () =>{
             </FormControl>
             
         </form>
-        <FlipMove>
+        <div className="app__messages">
+        <FlipMove >
         {
             messages.map(({id, message}) => 
             (   
@@ -63,6 +64,7 @@ const App = () =>{
                 ))
         }
         </FlipMove>
+        </div>
     </div>
   );
 };

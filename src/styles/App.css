@@ -23,6 +23,8 @@ border-radius: 10px;
     flex: 1;
 }
 .app__iconButton{
-
     flex: 0;
+}
+.app__messages{
+    margin-bottom:16vh;
 }
