@@ -17,6 +17,7 @@ const App = () =>{
     const [username, setUsername] = useState('');
     const [isShowEmoji, setIsShowEmoji] = useState(false);
     const lastdiv = useRef();
+    const emojiRef = useRef();
 
     useEffect(() =>{
         db.collection('messages')
@@ -64,13 +65,14 @@ const App = () =>{
       <img src="https://facebookbrand.com/wp-content/uploads/2018/09/Header-e1538151782912.png?w=100&h=100"/>
         <h2>Welcome {username}</h2>
             <EmojiBlock 
+            emojiRef={emojiRef}
             currentInput ={input}
             setInput = {setInput}
             setVisibility={setIsShowEmoji}
             showEmoji={isShowEmoji}/>
         <form className="app__form">
            <FormControl className="app__formControl">   
-                <IconButton className="app__iconButton" onClick={onEmojiButtonClick}>
+                <IconButton ref={emojiRef} className="app__iconButton" onClick={onEmojiButtonClick}>
                     <EmojiEmotionsIcon/>
                 </IconButton>
                 <Input className="app__input" placeholder="Type your message here" value={input} onChange={event => setInput(event.target.value)}/>

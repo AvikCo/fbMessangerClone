@@ -1,11 +1,14 @@
 import React,{ useRef, useEffect }  from 'react'
 import Picker, { SKIN_TONE_MEDIUM_DARK } from "emoji-picker-react";
 
-const EmojiBlock = ({showEmoji, currentInput, setInput, setVisibility}) => {
+const EmojiBlock = ({showEmoji, currentInput, emojiRef, setInput, setVisibility}) => {
 
     const ref = useRef();
-   {/* useEffect(()=>{
-        const clickEventListener =(event)=>{    
+  useEffect(()=>{
+        const clickEventListener =(event)=>{  
+            if(emojiRef.current.contains(event.target)){
+                return null
+            }  
             if(ref.current.contains(event.target)){
                 return null;
             }
@@ -18,7 +21,7 @@ const EmojiBlock = ({showEmoji, currentInput, setInput, setVisibility}) => {
             document.removeEventListener("click", clickEventListener)
         }
     },[])
-*/}
+
 
     const styles ={
         container: {
