@@ -1,3 +1,11 @@
+## Realtime Messanger
+It is a real time messenger react app, looks bit similer to FaceBook messanger.
+- Its using Firebase's firestore as its main db
+- designed with meterial UI
+- following BEM conventions in styling
+- Emoji functionality included 
+## Its an open souce project, any modification or bug fixes are warmly welcome. 
+## Send me a fork request to commit your code changes and make you as a contributer
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
