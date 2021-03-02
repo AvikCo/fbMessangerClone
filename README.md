@@ -6,9 +6,9 @@ It is a real time messenger react app, looks bit similer to FaceBook messanger.
 - designed with meterial UI
 - following BEM conventions in styling
 - Emoji functionality included 
-- 
+
  Its an open souce project, any modification or bug fixes are warmly welcome. 
- Send me a fork request to commit your code changes and to make you a contributer
+ Send me a fork request to commit your code changes and make you a contributer
 
 Live Demo: https://facebook-messanger-clone-7732f.web.app/
 # Getting Started with Create React App
